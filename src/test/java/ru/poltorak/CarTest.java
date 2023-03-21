@@ -76,23 +76,26 @@ class CarTest {
         assertArrayEquals(new String[]{"Dmitriy Finachkin"}, car.getOwners().toArray());
     }
 
+
     @Test
     void getListOfTwoOwners() {
         car.setOwner("Pavel Poltorak");
         assertArrayEquals(new String[]{"Dmitriy Finachkin", "Pavel Poltorak"}, car.getOwners().toArray());
     }
 
+
     @Test
     public void testPrivateMethode() {
         try {
             Method method = Car.class.getDeclaredMethod("testMethod", null);
-
             method.setAccessible(true);
             assertEquals("abc", method.invoke(car).toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 
     @Test
     public void testPrivateMethodeWithArgument() {
@@ -104,6 +107,8 @@ class CarTest {
             e.printStackTrace();
         }
     }
+
+
 //    @ParameterizedTest
 //    @DisplayName("Test Demonstrates how test data could be loader from file")
 //    @CsvFileSource(resources = "/src/main/resource/test-data.csv", delimiter = '|', numLinesToSkip = 1)
